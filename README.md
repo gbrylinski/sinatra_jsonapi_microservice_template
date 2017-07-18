@@ -6,6 +6,12 @@ This is a sample Sinatra + Sequel + Sinja microservice template application.
 
 just a bunch of gems specified in a `Gemfile`
 
+Documentation for gems for lazy ones:
+
+- [Sinatra](http://www.sinatrarb.com/)
+- [Sequel](http://sequel.jeremyevans.net/)
+- [Sinja](https://github.com/mwpastore/sinja)
+
 ## Installation
 
 fairly simple. Demo uses Sqlite3 file database which is created and initialized on start if necessary. So, no worries at all (-;
