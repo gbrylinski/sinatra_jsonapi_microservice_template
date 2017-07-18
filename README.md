@@ -19,7 +19,23 @@ cd demo_service
 rackup
 ```
 
-now, we will add a user:
+You can also use docker to containerize our app and run it. To do that first build an image:
+
+```bash
+cd demo_service
+docker build --force-rm --no-cache -t demo_service:0.0.1 .
+```
+
+after some... time our image is ready to use. Now it's time to run it:
+
+```bash
+cd demo_service
+docker run -d --name demo_service -p9292:9292 demo_service:0.0.1
+```
+
+## Usage
+
+If it works we can now try tu add a user:
 
 ```bash
 curl -X POST \
@@ -72,21 +88,7 @@ you should get a JSONAPI format response, similar to this:
 }
 ```
 
-You can also use docker to containerize our app and run it. To do that first build an image:
-
-```bash
-cd demo_service
-docker build --force-rm --no-cache -t demo_service:0.0.1 .
-```
-
-after some... time our image is ready to use. Now it's time to run it:
-
-```bash
-cd demo_service
-docker run -d --name demo_service -p9292:9292 demo_service:0.0.1
-```
-
-# Final thoughts
+## Final thoughts
 
 Have fun. It's very, very simple application made in minutes to check if and how well Sinatra + Sequel + Sinja performs. For me it's a great combination and definitely worth considering for small code pieces like specialized microservice.
 
