@@ -1,6 +1,8 @@
 # Demo Service
 
-This is a sample Sinatra + Sequel + Sinja microservice template application.
+This is a sample Sinatra + Sequel + Sinja microservice template application. It's been built to verify feasibility and easiness of such.
+
+It works and it's fast. Rails fast, not Go fast, I'm aware of that.
 
 ## Requirements
 
@@ -22,7 +24,8 @@ There are at least two option. Manually:
 
 ```bash
 cd demo_service
-rackup
+bundle # install necessary gems
+rackup # start da app
 ```
 
 You can also use docker to containerize our app and run it. To do that first build an image:
@@ -32,7 +35,7 @@ cd demo_service
 docker build --force-rm --no-cache -t demo_service:0.0.1 .
 ```
 
-after some... time our image is ready to use. Now it's time to run it:
+after few (hundred) seconds our image is ready to use. Now it's time to run it:
 
 ```bash
 cd demo_service
@@ -41,7 +44,7 @@ docker run -d --name demo_service -p9292:9292 demo_service:0.0.1
 
 ## Usage
 
-If it works we can now try tu add a user:
+There is a chance it's working so we could now try to add new user. Please notice we have to use a JSONAPI format:
 
 ```bash
 curl -X POST \
@@ -51,7 +54,7 @@ curl -X POST \
 http://localhost:9292/users
 ```
 
-query for all the users:
+let's query for all the users:
 
 ```bash
 curl -X GET \
@@ -60,7 +63,7 @@ curl -X GET \
 http://localhost:9292/users
 ```
 
-and specific user:
+and for particularly interesting one:
 
 ```bash
 curl -X GET \
@@ -96,6 +99,8 @@ you should get a JSONAPI format response, similar to this:
 
 ## Final thoughts
 
-Have fun. It's very, very simple application made in minutes to check if and how well Sinatra + Sequel + Sinja performs. For me it's a great combination and definitely worth considering for small code pieces like specialized microservice.
+Have fun. It's very, very simple application made in minutes to check if and how well Sinatra + Sequel + Sinja performs.
+
+For me it's a great combination and definitely worth considering for small code pieces like specialized microservice. Sinatra is amazing, every Rubyist knows that, right? Sinja seems to be very powerful and makes API implementation very easy.
 
 Any comments as well as constructive critics is very welcome.
