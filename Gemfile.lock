@@ -20,7 +20,7 @@ GEM
     prefork_engine (0.0.7)
       proc-wait3 (~> 1.7.2)
     proc-wait3 (1.7.3)
-    rack (2.2.3)
+    rack (2.2.6.3)
     rack-protection (2.0.8.1)
       rack
     rhebok (0.9.3)
